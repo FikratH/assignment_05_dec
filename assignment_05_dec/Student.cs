@@ -12,13 +12,15 @@ namespace assignment_05_dec
         public string Surname;
         public string Subject;
         public Group GroupName;
+        public int groupID;
 
-        public Student(string name, string surname, string subject, Group groupname)
+        public Student(string name, string surname, string subject, Group groupname,int groupId)
         {
             Name = name;
             Surname = surname;
             Subject = subject;
             GroupName= groupname;
+            groupID = groupId;
             groupname.addStudent(this,groupname);
         }
         public override string ToString()

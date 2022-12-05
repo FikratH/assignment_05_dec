@@ -21,12 +21,20 @@ namespace assignment_05_dec
             groups[groups.Length - 1] = this;
             Array.Resize(ref limits, limits.Length + 1);
             limits[limits.Length - 1] = groupLimit;
-            Console.WriteLine($"Group No {GroupId} with students' limit of {GroupLimit} was successfully created!");
+            Console.WriteLine($"Group No {GroupId} with students' limit of {GroupLimit} was successfully created!\n");
         }
         public void addStudent(Student student,Group group)
         {
+            int studentsOfGroupCount = 0;
+            foreach (Student stud in students)
+            {
+                if (stud.groupID == group.GroupId)
+                {
+                    studentsOfGroupCount++;
+                }
+            }
             int indexOfLimit = Array.IndexOf(groups, group);
-            if (students.Length < Group.limits[indexOfLimit])
+            if (studentsOfGroupCount < Group.limits[indexOfLimit])
             {
                 Array.Resize(ref students, students.Length + 1);
                 students[students.Length-1] = student;

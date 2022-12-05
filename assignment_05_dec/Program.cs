@@ -43,15 +43,15 @@
                         string groupIndexStr = (Array.IndexOf(Group.groups, group1) + 1).ToString();
                         Console.WriteLine($"{groupIndexStr}. {group1}");
                     }
-                    int selectedİndex = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("\n");
+                    int selectedIndex = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine(" ");
                     Console.WriteLine("Please, enter the student's name:");
                     string studName = Console.ReadLine();
                     Console.WriteLine("Please, enter the student's surname:");
                     string studSurname = Console.ReadLine();
                     Console.WriteLine("Please, enter the student's subject:");
                     string studSubject = Console.ReadLine();
-                    Student student = new Student(studName, studSurname, studSubject, Group.groups[selectedİndex-1]);
+                    Student student = new Student(studName, studSurname, studSubject, Group.groups[selectedIndex - 1], Group.groups[selectedIndex-1].GroupId);
                 }
                 else
                 {
