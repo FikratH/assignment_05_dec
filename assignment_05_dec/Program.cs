@@ -25,7 +25,7 @@
                     Console.WriteLine("\n");
                 }
             } while (wantToAddGroup);
-            //Console.WriteLine("Please enter the group ID: ");
+            //Console.WriteLine("Please enter the group ID: "); 
             //int id = Convert.ToInt32(Console.ReadLine());
             //Console.WriteLine("Please, enter the limit of students in group " + id);
             //byte limit = Convert.ToByte(Console.ReadLine());

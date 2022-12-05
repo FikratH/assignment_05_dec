@@ -12,17 +12,21 @@ namespace assignment_05_dec
         public byte GroupLimit;
         private static Student[] students = new Student[0];
         public static Group[] groups = new Group[0];
+        public static byte[] limits = new byte[0];
         public Group(int groupId, byte groupLimit)
         {
             GroupId = groupId;
             GroupLimit = groupLimit;
             Array.Resize(ref groups, groups.Length+1);
             groups[groups.Length - 1] = this;
+            Array.Resize(ref limits, limits.Length + 1);
+            limits[limits.Length - 1] = groupLimit;
             Console.WriteLine($"Group No {GroupId} with students' limit of {GroupLimit} was successfully created!");
         }
         public void addStudent(Student student,Group group)
         {
-            if (students.Length<group.GroupLimit)
+            int indexOfLimit = Array.IndexOf(groups, group);
+            if (students.Length < Group.limits[indexOfLimit])
             {
                 Array.Resize(ref students, students.Length + 1);
                 students[students.Length-1] = student;
